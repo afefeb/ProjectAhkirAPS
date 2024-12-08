@@ -21,10 +21,8 @@ public class Controller {
     @FXML
     private ListView<User> listView;
 
-
     @FXML
     private Button tambahData;
-
 
     @FXML
     private TextField textNama;
@@ -35,7 +33,7 @@ public class Controller {
     @FXML
     void tambahData(MouseEvent event) {
         UserDAO userDAO = new UserDAO();
-        userDAO.addData(new User(textNama.getText(),textPass.getText()));
+        userDAO.addData(new User(textNama.getText(), textPass.getText()));
         ObservableList<User> uList = userDAO.showData();
         listView.setItems(uList);
 
@@ -46,7 +44,7 @@ public class Controller {
         alert.showAndWait(); // Menampilkan pop-up dan menunggu hingga ditutup
     }
 
-    public void  initialize(){
+    public void initialize() {
         UserDAO uDao = new UserDAO();
         ObservableList<User> uList = uDao.showData();
         listView.setItems(uList);
@@ -59,8 +57,8 @@ public class Controller {
         System.out.println(selected);
 
         UserDAO dao = new UserDAO();
-        int result =  dao.delData(selected);
-        if(result != 0){
+        int result = dao.delData(selected);
+        if (result != 0) {
             System.out.println("Delete Berhasil");
         }
         ObservableList<User> uList = dao.showData();
@@ -78,17 +76,13 @@ public class Controller {
 
         UserDAO dao = new UserDAO();
         int result = dao.updateData(selected);
-        if(result !=0){
+        if (result != 0) {
             System.out.println("Berhasil Update");
         }
         ObservableList<User> uList = dao.showData();
         listView.setItems(uList);
 
-
-
     }
-
-
 
     public void switchToScene2(javafx.event.ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("second.fxml"));

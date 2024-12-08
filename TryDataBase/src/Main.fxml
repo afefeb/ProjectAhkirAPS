@@ -9,13 +9,13 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
       <ListView fx:id="listView" layoutX="3.0" layoutY="3.0" prefHeight="394.0" prefWidth="459.0" />
-      <Button fx:id="Add" layoutX="502.0" layoutY="324.0" mnemonicParsing="false" onMouseClicked="#tambahData" prefHeight="25.0" prefWidth="55.0" text="Next" textAlignment="CENTER" />
-      <TextField fx:id="textNama" layoutX="467.0" layoutY="78.0" prefHeight="26.0" prefWidth="125.0" />
-      <TextField fx:id="textPass" layoutX="466.0" layoutY="129.0" prefHeight="26.0" prefWidth="126.0" />
       <Label layoutX="467.0" layoutY="61.0" text="Nama" />
       <Label layoutX="467.0" layoutY="111.0" text="Password" />
-      <Button layoutX="502.0" layoutY="204.0" mnemonicParsing="false" onMouseClicked="#deleteData" prefHeight="25.0" prefWidth="55.0" text="Add" textAlignment="CENTER" />
-      <Button layoutX="502.0" layoutY="244.0" mnemonicParsing="false" onMouseClicked="#updateData" prefHeight="25.0" prefWidth="55.0" text="Delete" textAlignment="CENTER" />
-      <Button layoutX="502.0" layoutY="284.0" mnemonicParsing="false" onAction="#switchToScene2" prefHeight="25.0" prefWidth="55.0" text="Update" textAlignment="CENTER" />
+      <TextField fx:id="textNama" layoutX="467.0" layoutY="78.0" prefHeight="26.0" prefWidth="125.0" />
+      <TextField fx:id="textPass" layoutX="466.0" layoutY="129.0" prefHeight="26.0" prefWidth="126.0" />
+      <Button fx:id="Add" layoutX="502.0" layoutY="204.0" mnemonicParsing="false" onDragDetected="#tambahData" onMouseClicked="#tambahData" prefHeight="25.0" prefWidth="55.0" text="Add" textAlignment="CENTER" />
+      <Button layoutX="502.0" layoutY="244.0" mnemonicParsing="false" onDragDetected="#deleteData" onMouseClicked="#deleteData" prefHeight="25.0" prefWidth="55.0" text="Delete" textAlignment="CENTER" />
+      <Button layoutX="502.0" layoutY="284.0" mnemonicParsing="false" onDragDetected="#updateData" onMouseClicked="#updateData" prefHeight="25.0" prefWidth="55.0" text="Update" textAlignment="CENTER" />
+      <Button layoutX="502.0" layoutY="324.0" mnemonicParsing="false" onAction="#switchToScene2" prefHeight="25.0" prefWidth="55.0" text="Next" textAlignment="CENTER" />
    </children>
 </AnchorPane>
