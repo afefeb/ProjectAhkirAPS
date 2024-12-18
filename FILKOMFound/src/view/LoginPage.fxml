@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginPageController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="-9.0" layoutY="-3.0" prefHeight="600.0" prefWidth="1110.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="35.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane prefHeight="38.0" prefWidth="1100.0" style="-fx-background-color: #2C2F48;">
+                           <children>
+                              <Label layoutX="29.0" layoutY="7.0" text="FILKOMFound" textFill="#f0f0ea">
+                                 <font>
+                                    <Font name="Tahoma" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutY="-1.0" prefHeight="417.0" prefWidth="200.0" style="-fx-background-color: #393D5E;" AnchorPane.topAnchor="-1.0">
+                           <children>
+                              <ImageView fitHeight="192.0" fitWidth="188.0" layoutX="5.0" layoutY="107.0" AnchorPane.topAnchor="107.0">
+                                 <image>
+                                    <Image url="@../resources/icons/Filkom%20Found%20(1).png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutY="415.0" prefHeight="147.0" prefWidth="200.0" style="-fx-background-color: #2C2F48;">
+                           <children>
+                              <Label layoutX="18.0" layoutY="55.0" text="Please Sign In!" textFill="#f0f0ea">
+                                 <font>
+                                    <Font name="Candara Bold" size="26.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane prefHeight="559.0" prefWidth="900.0" style="-fx-background-color: #FFFFFF;">
+                           <children>
+                              <TextField fx:id="txtUsername" layoutX="275.0" layoutY="169.0" prefHeight="44.0" prefWidth="382.0" style="-fx-background-color: #FFFFFF;">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </TextField>
+                              <Label layoutX="280.0" layoutY="143.0" text="Username">
+                                 <font>
+                                    <Font name="Candara Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="280.0" layoutY="256.0" text="Password">
+                                 <font>
+                                    <Font name="Candara Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="166.0" layoutY="74.0" text="Welcome!">
+                                 <font>
+                                    <Font name="Eras Bold ITC" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnLogin" layoutX="344.0" layoutY="424.0" mnemonicParsing="false" onAction="#userLogin" prefHeight="57.0" prefWidth="262.0" style="-fx-background-color: #393D5E;" text="Login" textFill="#f0f0ea">
+                                 <font>
+                                    <Font name="Candara Bold" size="30.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="355.0" layoutY="399.0" text="Don't have an account? ">
+                                 <font>
+                                    <Font name="Candara" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Hyperlink fx:id="linkRegister" layoutX="529.0" layoutY="395.0" onAction="#toRegisterPage" text="Register" textFill="#000000db">
+                                 <font>
+                                    <Font name="Candara Bold Italic" size="18.0" />
+                                 </font>
+                              </Hyperlink>
+                              <PasswordField fx:id="txtPassword" layoutX="275.0" layoutY="281.0" prefHeight="44.0" prefWidth="382.0" style="-fx-background-color: #FFFFFF;">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </PasswordField>
+                              <Hyperlink fx:id="linkForgotPassword" layoutX="278.0" layoutY="327.0" onAction="#toForgotPwdPage" text="Forgot your password?" textFill="#000000db">
+                                 <font>
+                                    <Font name="Franklin Gothic Heavy" size="16.0" />
+                                 </font>
+                              </Hyperlink>
+                              <Label fx:id="loginMessageLabel" alignment="CENTER" layoutX="161.0" layoutY="488.0" prefHeight="30.0" prefWidth="647.0" text=" " textAlignment="CENTER" AnchorPane.leftAnchor="161.0" AnchorPane.rightAnchor="92.0" AnchorPane.topAnchor="488.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

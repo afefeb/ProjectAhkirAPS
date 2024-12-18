@@ -3,9 +3,7 @@ package util;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class MySQLConnection {
     private static final String PROPERTIES_FILE = "util/key.txt";
@@ -23,10 +21,11 @@ public class MySQLConnection {
     }
 
     public static Connection getConnection() throws SQLException {
+        
+        
         return DriverManager.getConnection(
                 properties.getProperty("url"),
                 properties.getProperty("user"),
-                properties.getProperty("password")
-        );
+                properties.getProperty("password"));
     }
 }

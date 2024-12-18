@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TableViewController">
+    <TableView fx:id="tableView" editable="true" HBox.hgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="imageColumn" text="Image" />
+            <TableColumn fx:id="namaBarangColumn" text="Nama Barang" />
+            <TableColumn fx:id="descriptionColumn" text="Deskripsi" />
+            <TableColumn fx:id="lokasiColumn" text="Lokasi" />
+            <TableColumn fx:id="waktuKehilanganColumn" text="Waktu Kehilangan" />
+            <TableColumn fx:id="statusColumn" text="Status" />
+        </columns>
+    </TableView>
+</HBox>

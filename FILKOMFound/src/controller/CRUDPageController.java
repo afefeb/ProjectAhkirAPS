@@ -66,7 +66,6 @@ public class CRUDPageController {
         Parent root = FXMLLoader.load(getClass().getResource("/view/homepage.fxml"));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/resources/mainPage.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
 

@@ -89,8 +89,7 @@ public class CRUDUser implements CRUDInterface<Barang> {
             PreparedStatement ps = MySQLConnection.getConnection().prepareStatement(query);
             ps.setInt(1, data.getId_barang());
             result = ps.executeUpdate();
-        }
-        catch (SQLException ex){
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
         return result;
@@ -99,11 +98,11 @@ public class CRUDUser implements CRUDInterface<Barang> {
     @Override
     public List<Barang> showData() {
         List<Barang> bList = new ArrayList<>();
-        try{
+        try {
             String query = "Select id_barang, nama_barang,deskripsi,lokasi,waktu_kehilangan,status,image FROM Barang;";
             PreparedStatement ps = MySQLConnection.getConnection().prepareStatement(query);
-            ResultSet res =ps.executeQuery();
-            while (res.next()){
+            ResultSet res = ps.executeQuery();
+            while (res.next()) {
                 String id_barang = res.getString("id_barang");
                 String nama_barang = res.getString("nama_barang");
                 String deskripsi = res.getString("deskripsi");
@@ -114,8 +113,8 @@ public class CRUDUser implements CRUDInterface<Barang> {
                 Image imageBarang = null;
                 // status blom
 
-                if(image != null){
-                    byte[] imageBytes = image.getBytes(1,(int)image.length());
+                if (image != null) {
+                    byte[] imageBytes = image.getBytes(1, (int) image.length());
                     ByteArrayInputStream inputStream = new ByteArrayInputStream(imageBytes);
                     imageBarang = new Image(inputStream);
                 }
@@ -125,7 +124,7 @@ public class CRUDUser implements CRUDInterface<Barang> {
 
             }
 
-        }catch (SQLException ex){
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
         return bList;
