@@ -4,6 +4,7 @@ import CRUD.CRUDUser;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -62,15 +63,21 @@ public class CRUDPageController {
     private DatePicker textWaktu;
 
     @FXML
-    void toMainPage(javafx.event.ActionEvent actionEvent) throws IOException {
+    void toHomePage(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/view/homepage.fxml"));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
-
+    @FXML
+    void toLoginPage(ActionEvent event) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("/view/Loginpage.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
     @FXML
     public void initialize() {

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -82,19 +83,19 @@
                      <children>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <AnchorPane layoutY="-1.0" prefHeight="417.0" prefWidth="200.0" style="-fx-background-color: #393D5E;" AnchorPane.topAnchor="-1.0">
+                              <AnchorPane prefHeight="417.0" prefWidth="200.0" style="-fx-background-color: #393D5E;" AnchorPane.topAnchor="-1.0">
                                  <children>
                                     <ImageView fitHeight="192.0" fitWidth="188.0" layoutX="6.0" AnchorPane.topAnchor="0.0">
                                        <image>
                                           <Image url="@../resources/icons/Filkom%20Found%20(1).png" />
                                        </image>
                                     </ImageView>
-                                    <Button alignment="CENTER" layoutX="11.0" layoutY="209.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: #F0F0EA;" text="Home" textFill="#2c2f48">
+                                    <Button alignment="CENTER" layoutX="10.0" layoutY="209.0" mnemonicParsing="false" onAction="#toHomePage" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: #2c2f48;" text="Home" textFill="#f0f0ea">
                                        <font>
                                           <Font name="Candara Bold" size="22.0" />
                                        </font>
                                     </Button>
-                                    <Button alignment="CENTER" layoutX="11.0" layoutY="262.0" mnemonicParsing="false" onAction="#toCRUDPage" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: #2c2f48;" text="Edit List" textFill="#f0f0ea">
+                                    <Button alignment="CENTER" layoutX="10.0" layoutY="268.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: #f0f0ea;" text="Edit List" textFill="#2c2f48">
                                        <font>
                                           <Font name="Candara Bold" size="22.0" />
                                        </font>
@@ -103,11 +104,26 @@
                               </AnchorPane>
                               <AnchorPane layoutY="415.0" prefHeight="147.0" prefWidth="200.0" style="-fx-background-color: #2C2F48;">
                                  <children>
-                                    <Label layoutX="18.0" layoutY="55.0" text="Please Sign In!" textFill="#f0f0ea">
+                                    <ImageView fitHeight="74.0" fitWidth="71.0" layoutX="63.0" layoutY="1.0">
+                                       <image>
+                                          <Image url="@../resources/icons/person_70dp_F0F0EA_FILL0_wght400_GRAD0_opsz48.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="labelNIM" layoutX="51.0" layoutY="67.0" text="235150200111052" textFill="#f0f0ea">
                                        <font>
-                                          <Font name="Candara Bold" size="26.0" />
+                                          <Font name="Calibri Bold" size="13.0" />
                                        </font>
                                     </Label>
+                                    <Label fx:id="labelUsername" layoutX="63.0" layoutY="83.0" text="Harry Phalosa" textFill="#f0f0ea">
+                                       <font>
+                                          <Font name="Calibri Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Button alignment="CENTER" layoutX="35.0" layoutY="108.0" mnemonicParsing="false" onAction="#toLoginPage" prefHeight="20.0" prefWidth="133.0" style="-fx-background-color: #f0f0ea;" text="Logout" textFill="#2c2f48">
+                                       <font>
+                                          <Font name="Candara Bold" size="14.0" />
+                                       </font>
+                                    </Button>
                                  </children>
                               </AnchorPane>
                            </children>
@@ -130,25 +146,47 @@
                                    <!-- Kolom pertama -->
                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                           <AnchorPane stylesheets="@../resources/CRUDPage.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
-                                               <styleClass>
-                                                   <String fx:value="white-bg" />
-                                                   <String fx:value="shadow" />
-                                               </styleClass>
-                                               <children>
-                                                   <TextField fx:id="textBarang" layoutX="130.0" layoutY="26.0" prefHeight="26.0" prefWidth="187.0" styleClass="textfield" stylesheets="@../resources/CRUDPage.css" />
-                                                   <Text layoutX="62.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deskripsi: ">
-                                                       <font>
-                                                           <Font name="Tahoma" size="12.0" />
-                                                       </font>
-                                                   </Text>
-                                                   <TextArea fx:id="textDeskripsi" layoutX="130.0" layoutY="67.0" prefHeight="90.0" prefWidth="224.0" styleClass="textfield" stylesheets="@../resources/CRUDPage.css" />
-                                                   <Text layoutX="77.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lokasi:" />
-                                                   <TextField fx:id="textLokasi" layoutX="130.0" layoutY="172.0" prefHeight="26.0" prefWidth="178.0" styleClass="textfield" stylesheets="@../resources/CRUDPage.css" />
-                                                   <DatePicker fx:id="textWaktu" layoutX="128.0" layoutY="218.0" prefHeight="26.0" prefWidth="182.0" styleClass="textfield" />
-                                                   <Button layoutX="67.0" layoutY="299.0" mnemonicParsing="false" onMouseClicked="#tambahData" styleClass="add-btn" stylesheets="@../resources/CRUDPage.css" text="Add" />
-                                                   <Button layoutX="147.0" layoutY="299.0" mnemonicParsing="false" onMouseClicked="#updateData" styleClass="update-btn" stylesheets="@../resources/CRUDPage.css" text="Update" />
-                                                   <Button layoutX="236.0" layoutY="299.0" mnemonicParsing="false" onMouseClicked="#hapusData" styleClass="delete-btn" stylesheets="@../resources/CRUDPage.css" text="Delete" />
+                                    <AnchorPane prefHeight="559.0" prefWidth="446.0" styleClass="white-bg" stylesheets="@../resources/CRUDPage.css">
+                                       <children>
+                                          <TableView fx:id="tableviewCRUD" layoutX="16.0" layoutY="20.0" prefHeight="513.0" prefWidth="396.0" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="20.0">
+                                             <columns>
+                                                <TableColumn fx:id="namaBarangColumn" prefWidth="111.0" text="Nama Barang" />
+                                                <TableColumn fx:id="lokasiColumn" prefWidth="92.66668701171875" text="Lokasi" />
+                                                <TableColumn fx:id="waktuColumn" prefWidth="145.66668701171875" text="Waktu Kehilangan" />
+                                                <TableColumn fx:id="statusColumn" maxWidth="140.0" prefWidth="70.33331298828125" text="Status" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                       </children>
+                                   </AnchorPane>
+
+                                   <!-- Kolom kedua -->
+                                   <AnchorPane prefHeight="562.0" prefWidth="436.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <AnchorPane layoutX="43.0" layoutY="16.0" prefHeight="524.0" prefWidth="414.0" stylesheets="@../resources/CRUDPage.css">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <TextField fx:id="textBarang" layoutX="130.0" layoutY="26.0" prefHeight="26.0" prefWidth="187.0" styleClass="textfield" stylesheets="@../resources/CRUDPage.css" />
+                                          <Text layoutX="62.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deskripsi: ">
+                                             <font>
+                                                <Font name="Tahoma" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <TextArea fx:id="textDeskripsi" layoutX="130.0" layoutY="67.0" prefHeight="90.0" prefWidth="224.0" styleClass="textfield" stylesheets="@../resources/CRUDPage.css" />
+                                          <Text layoutX="77.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lokasi:" />
+                                          <TextField fx:id="textLokasi" layoutX="130.0" layoutY="172.0" prefHeight="26.0" prefWidth="178.0" styleClass="textfield" stylesheets="@../resources/CRUDPage.css" />
+                                          <DatePicker fx:id="textWaktu" layoutX="128.0" layoutY="218.0" prefHeight="26.0" prefWidth="182.0" styleClass="textfield" />
+                                          <Button graphicTextGap="23.0" layoutX="83.0" layoutY="300.0" mnemonicParsing="false" onMouseClicked="#tambahData" prefHeight="26.0" prefWidth="51.0" style="-fx-background-color: #2c2f48;" styleClass="add-btn" text="Add" textOverrun="WORD_ELLIPSIS">
+                                             <cursor>
+                                                <Cursor fx:constant="SW_RESIZE" />
+                                             </cursor>
+                                          </Button>
+                                          <Button layoutX="175.0" layoutY="299.0" mnemonicParsing="false" onMouseClicked="#updateData" styleClass="update-btn" stylesheets="@../resources/CRUDPage.css" text="Update" />
+                                          <Button layoutX="279.0" layoutY="300.0" mnemonicParsing="false" onMouseClicked="#hapusData" styleClass="delete-btn" stylesheets="@../resources/CRUDPage.css" text="Delete" />
                                           <Text layoutX="10.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Waktu Kehilangan: " />
                                           <Text layoutX="41.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nama Barang:">
                                              <font>
@@ -157,31 +195,9 @@
                                           </Text>
                                           <Button layoutX="69.0" layoutY="396.0" mnemonicParsing="false" onMouseClicked="#uploudGambar" text="Uploud File" />
                                           <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" layoutX="154.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true" />
-                                               </children>
-                                           </AnchorPane>
                                        </children>
-                                   </AnchorPane>
-
-                                   <!-- Kolom kedua -->
-                                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
-                                       <children>
-                                           <AnchorPane stylesheets="@../resources/CRUDPage.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
-                                               <styleClass>
-                                                   <String fx:value="shadow" />
-                                                   <String fx:value="white-bg" />
-                                               </styleClass>
-                                               <children>
-                                                   <TableView fx:id="tableviewCRUD" layoutX="16.0" layoutY="62.0" prefHeight="482.0" prefWidth="482.0" AnchorPane.bottomAnchor="14.800000000000068" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.80000000000001" AnchorPane.topAnchor="62.0">
-                                                       <columns>
-                                                           <TableColumn fx:id="namaBarangColumn" prefWidth="117.60003638267517" text="Nama Barang" />
-                                                           <TableColumn fx:id="lokasiColumn" prefWidth="50.4000244140625" text="Lokasi" />
-                                                           <TableColumn fx:id="waktuColumn" prefWidth="123.199951171875" text="Waktu Kehilangan" />
-                                                           <TableColumn fx:id="statusColumn" prefWidth="117.60009765625" text="Status" />
-                                                       </columns>
-                                                   </TableView>
-                                               </children>
-                                           </AnchorPane>
-                                       </children>
+                                    </AnchorPane>
+                                 </children>
                                    </AnchorPane>
                                </children>
                            </GridPane>
